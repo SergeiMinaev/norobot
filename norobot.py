@@ -69,4 +69,4 @@ def gen_captcha():
         img.paste( ImageOps.colorize(w, color,color),
                 (offset, random.randrange(1,10)),  w)
         offset += letter_offset
-    return {'image': img, 'secret': word}
+    return {'img': img, 'secret': word}
