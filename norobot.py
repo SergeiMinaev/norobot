@@ -23,11 +23,10 @@ def gen_captcha(width = img_width):
     with open(words_file) as f:
         lines = f.readlines()
         word = random.choice(lines)
-        word = word.replace('\n', '').replace('ё', '')
+        word = word.replace('\n', '')
 
     img = Image.new('RGB', (img_width, img_height), (255, 255, 255))
 
-    #word = "велоджинс"
     n = 0
     while n < noise_count:
         letter = random.choice(noise)
