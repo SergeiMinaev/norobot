@@ -19,11 +19,14 @@ noise_count = 60
 noise_font_size_range = (35,40)
 
 
-def gen_captcha(width = img_width):
-    with open(words_file) as f:
-        lines = f.readlines()
-        word = random.choice(lines)
-        word = word.replace('\n', '')
+def gen_captcha(width = img_width, just_numbers = False):
+    if just_numbers:
+        word = str(random.randint(100000,999999))
+    else:
+        with open(words_file) as f:
+            lines = f.readlines()
+            word = random.choice(lines)
+            word = word.replace('\n', '')
 
     img = Image.new('RGB', (img_width, img_height), (255, 255, 255))
 
