@@ -13,7 +13,10 @@ word_color_range = (30,100)
 word_font_size = 45
 letter_offset = 33
 words_file = os.path.join(BASE_DIR, "words_ru/words.txt")
-fonts = ["fonts/betina-script-ctt.ttf", "fonts/sign-painter.otf"]
+fonts = [
+    "fonts/betina-script-ctt.ttf",
+    "fonts/sign-painter.otf"
+]
 noise = 'абвгдеёжзийклмнопрстуфхцчшщъыьэюя'
 noise_count = 60
 noise_font_size_range = (35,40)
@@ -64,10 +67,13 @@ def gen_captcha(width = img_width, just_numbers = False):
         letter = letter.upper()
         letter_img = Image.new('L', (int(word_font_size*1.2), int(word_font_size*1.2)))
         d = ImageDraw.Draw(letter_img)
+        if letter == '7': font = fonts[0]
+        elif letter == '1': font = fonts[1]
+        else: font = random.choice(fonts)
         d.text((3,3),
                 letter,
                 font=ImageFont.truetype(
-                    os.path.join(BASE_DIR,random.choice(fonts)),
+                    os.path.join(BASE_DIR, font),
                     word_font_size),
                 fill=255)
         w = letter_img.rotate(random.randrange(-30,30), expand=1)
