@@ -1,7 +1,8 @@
 # norobot
-Simple graphic CAPTCHA that shows actual words instead of random set to help a human read it.
+Простая графическая CAPTCHA, показывающая числа или слова вместо случайного набора букв.
+Слова используются только безопасные - без негативной окраски.
 
-Usage:
+Использование:
 ```
 >>> import norobot
 >>> norobot.gen_captcha()
