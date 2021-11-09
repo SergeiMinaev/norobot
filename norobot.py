@@ -19,7 +19,7 @@ fonts = [
 ]
 noise = 'абвгдеёжзийклмнопрстуфхцчшщъыьэюя'
 noise_count = 60
-noise_font_size_range = (35,40)
+noise_font_size_range = (35,60)
 
 
 def gen_captcha(width = img_width, just_numbers = False):
@@ -75,8 +75,8 @@ def gen_captcha(width = img_width, just_numbers = False):
                 font=ImageFont.truetype(
                     os.path.join(BASE_DIR, font),
                     word_font_size),
-                fill=255)
-        w = letter_img.rotate(random.randrange(-30,30), expand=1)
+                fill=210)
+        w = letter_img.rotate(random.randrange(-50,50), expand=1)
         img.paste( ImageOps.colorize(w, color,color),
                 (offset, random.randrange(-1,3)),  w)
         offset += letter_offset
