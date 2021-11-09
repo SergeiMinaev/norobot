@@ -12,7 +12,7 @@ noise_color_range = (140,200)
 word_color_range = (30,100)
 word_font_size = 45
 letter_offset = 33
-words_file = os.path.join(BASE_DIR, "words_ru/words.txt")
+words_file = os.path.join(BASE_DIR, "words_ru/safe_words.txt")
 fonts = [
     "fonts/betina-script-ctt.ttf",
     "fonts/sign-painter.otf"
